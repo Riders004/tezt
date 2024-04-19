@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Buttons with Dynamic Background</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #7FDBFF; /* Beautiful initial color */
+    transition: background-color 0.5s; /* Smooth transition for color change */
+  }
+  .button {
+    display: block; /* Make the link fill the container */
+    width: 200px; /* Width of the button */
+    padding: 15px 0; /* Padding for top and bottom */
+    margin: 10px 0; /* Spacing between buttons */
+    font-size: 16px;
+    text-align: center; /* Center the text inside the button */
+    color: white; /* Text color */
+    background-color: #0074D9; /* Button color */
+    border: none;
+    border-radius: 0; /* Remove border radius for rectangular shape */
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    outline: none;
+  }
+  .button:hover {
+    background-color: #001F3F; /* Darker background on hover */
+  }
+</style>
+</head>
+<body>
+<a href="http://example.com/link1" class="button">Button 1</a>
+<a href="http://example.com/link2" class="button">Button 2</a>
+<a href="http://example.com/link3" class="button">Button 3</a>
+
+<script>
+  function changeColor() {
+    var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = randomColor;
+  }
+  // Change the background color every 5 seconds
+  setInterval(changeColor, 500); // Adjusted to 5000 for 5-second intervals
+</script>
+</body>
+</html>
